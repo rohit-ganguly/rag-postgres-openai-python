@@ -16,9 +16,7 @@ class ChatUser(HttpUser):
             json={
                 "messages": [
                     {
-                        "content": random.choice(
-                            ["Best shoe for hiking?", "Climbing shoe cheaper than $30?", "Waterproof camping gear?"]
-                        ),
+                        "content": random.choice(["Chinese restaurant?", "Japanese restaurant?"]),
                         "role": "user",
                     }
                 ],
