@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Stack, IconButton } from "@fluentui/react";
 import DOMPurify from "dompurify";
 
@@ -29,6 +29,7 @@ export const Answer = ({
     onFollowupQuestionClicked,
     showFollowupQuestions
 }: Props) => {
+    const [isReferencesCollapsed, setIsReferencesCollapsed] = useState(true);
     const followupQuestions = answer.context.followup_questions;
     const messageContent = answer.message.content;
     const parsedAnswer = useMemo(() => parseAnswerToHtml(messageContent, isStreaming, onCitationClicked), [answer]);
@@ -60,23 +61,33 @@ export const Answer = ({
             {!!parsedAnswer.citations.length && (
                 <Stack.Item>
                     <Stack horizontal wrap tokens={{ childrenGap: 5 }}>
-                        <span className={styles.citationLearnMore}>References:</span>
-                        <ol>
-                        {parsedAnswer.citations.map((rowId, ind) => {
-                            const citation = answer.context.data_points[rowId];
-                            if (!citation) return null;
-                            return (
-                                <li key={rowId}>
-                                    <h4>{citation.name}</h4>
-                                    <p className={styles.referenceMetadata}>Location: {citation.location}</p>
-                                    <p className={styles.referenceMetadata}>Price level: {citation.price_level}</p>
-                                    <p className={styles.referenceMetadata}>Rating: {citation.rating}</p>
-                                    <p>{citation.description}</p>
-                                </li>
-                            );
-                        })}
-                        </ol>
+                        <Stack horizontal verticalAlign="center" tokens={{ childrenGap: 5 }}>
+                            <IconButton
+                                iconProps={{ iconName: isReferencesCollapsed ? "ChevronDown" : "ChevronUp" }}
+                                title={isReferencesCollapsed ? "Expand references" : "Collapse references"}
+                                ariaLabel={isReferencesCollapsed ? "Expand references" : "Collapse references"}
+                                onClick={() => setIsReferencesCollapsed(!isReferencesCollapsed)}
+                            />
+                            <span className={styles.citationLearnMore}>References:</span>
+                        </Stack>
                     </Stack>
+                    {!isReferencesCollapsed && (
+                        <ol>
+                            {parsedAnswer.citations.map((rowId, ind) => {
+                                const citation = answer.context.data_points[rowId];
+                                if (!citation) return null;
+                                return (
+                                    <li key={rowId}>
+                                        <h4>{citation.name}</h4>
+                                        <p className={styles.referenceMetadata}>Location: {citation.location}</p>
+                                        <p className={styles.referenceMetadata}>Price level: {citation.price_level}</p>
+                                        <p className={styles.referenceMetadata}>Rating: {citation.rating}</p>
+                                        <p>{citation.description}</p>
+                                    </li>
+                                );
+                            })}
+                        </ol>
+                    )}
                 </Stack.Item>
             )}
 
