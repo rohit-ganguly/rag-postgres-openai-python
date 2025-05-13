@@ -42,22 +42,17 @@ class ChatRequest(BaseModel):
 
 
 class ItemPublic(BaseModel):
-    id: int
+    id: str
     name: str
-    location: str
     cuisine: str
     rating: int
     price_level: int
     review_count: int
-    hours: str
-    tags: list[str]
     description: str
     menu_summary: str
-    top_reviews: str
-    vibe: str
 
     def to_str_for_rag(self):
-        return f"Name:{self.name} Description:{self.description} Location:{self.location} Cuisine:{self.cuisine} Rating:{self.rating} Price Level:{self.price_level} Review Count:{self.review_count} Hours:{self.hours} Tags:{self.tags} Menu Summary:{self.menu_summary} Top Reviews:{self.top_reviews} Vibe:{self.vibe}"  # noqa: E501
+        return f"Name:{self.name} Description:{self.description} Cuisine:{self.cuisine} Rating:{self.rating} Price Level:{self.price_level} Review Count:{self.review_count} Menu Summary:{self.menu_summary}"  # noqa: E501
 
 
 class ItemWithDistance(ItemPublic):
@@ -75,7 +70,7 @@ class ThoughtStep(BaseModel):
 
 
 class RAGContext(BaseModel):
-    data_points: dict[int, ItemPublic]
+    data_points: dict[str, ItemPublic]
     thoughts: list[ThoughtStep]
     followup_questions: Optional[list[str]] = None
 
