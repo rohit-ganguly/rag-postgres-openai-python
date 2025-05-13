@@ -1,22 +1,4 @@
 {
-    "pgsql.connections": [
-        {
-            "id": "92CC1089-BAD0-44A4-B071-A50A6EC12B67",
-            "groupId": "F3347CD6-9995-4EE9-8D98-D88DB010FA5B",
-            "authenticationType": "SqlLogin",
-            "connectTimeout": 15,
-            "applicationName": "vscode-pgsql",
-            "clientEncoding": "utf8",
-            "sslmode": "prefer",
-            "server": "localhost",
-            "user": "admin",
-            "password": "",
-            "savePassword": true,
-            "database": "postgres",
-            "profileName": "local-pg",
-            "expiresOn": 0
-        }
-    ],
     "python.testing.pytestArgs": [
         "tests"
     ],
