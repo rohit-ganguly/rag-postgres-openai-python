@@ -3,7 +3,7 @@ import csv
 import json
 
 # Read CSV file - Using the correct dialect to handle quotes properly
-with open("data.csv", encoding="utf-8") as csv_file:
+with open("pittsburgh_restaurants.csv", encoding="utf-8") as csv_file:
     # Use the csv.reader with proper quoting parameters
     csv_reader = csv.reader(csv_file, quoting=csv.QUOTE_ALL, doublequote=True, escapechar="\\")
     header = next(csv_reader)  # Get the header row
@@ -42,10 +42,17 @@ for row in data:
             item[header[i]] = value
     # remove is_open column
     del item["is_open"]
+    del item["hours"]
+    del item["neighborhood"]
+    del item["tags"]
+    del item["vibe"]
+    del item["top_reviews"]
+    if item["price_level"] == "":
+        item["price_level"] = 2.0  # Assume 2.0 if empty
     json_data.append(item)
 
 # Write to JSON file
-with open("data.json", "w", encoding="utf-8") as f:
+with open("src/backend/fastapi_app/seed_data.json", "w", encoding="utf-8") as f:
     json.dump(json_data, f, indent=4, ensure_ascii=False)
 
 print(f"Successfully converted CSV data to JSON format with {len(json_data)} records")

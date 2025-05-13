@@ -5,7 +5,7 @@ import styles from "./Example.module.css";
 const DEFAULT_EXAMPLES: string[] = [
     "Good spot to grab a quick coffee in morning?",
     "Inexpensive chinese restaurants for 8-people?",
-    "5-star Japanese restaurant for a couple people?",
+    "4-star Japanese restaurant for a couple people?",
 ];
 
 interface Props {

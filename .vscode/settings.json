@@ -1,26 +1,20 @@
 {
-    "sqltools.connections": [
+    "pgsql.connections": [
         {
-            "previewLimit": 50,
+            "id": "92CC1089-BAD0-44A4-B071-A50A6EC12B67",
+            "groupId": "F3347CD6-9995-4EE9-8D98-D88DB010FA5B",
+            "authenticationType": "SqlLogin",
+            "connectTimeout": 15,
+            "applicationName": "vscode-pgsql",
+            "clientEncoding": "utf8",
+            "sslmode": "prefer",
             "server": "localhost",
-            "port": 5432,
-            "driver": "PostgreSQL",
-            "name": "local",
+            "user": "admin",
+            "password": "",
+            "savePassword": true,
             "database": "postgres",
-            "username": "admin",
-            "password": "postgres"
-        },
-        {
-            "name": "Azure database",
-            "driver": "PostgreSQL",
-            "server": "<HOSTNAME>.postgres.database.azure.com",
-            "port": 5432,
-            "database": "postgres",
-            "username": "<USERNAME>",
-            "askForPassword": true,
-            "pgOptions": {
-                "ssl": true
-            }
+            "profileName": "local-pg",
+            "expiresOn": 0
         }
     ],
     "python.testing.pytestArgs": [

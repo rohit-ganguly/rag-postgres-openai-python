@@ -79,7 +79,6 @@ export const Answer = ({
                                 return (
                                     <li key={rowId}>
                                         <h4>{citation.name}</h4>
-                                        <p className={styles.referenceMetadata}>Location: {citation.location}</p>
                                         <p className={styles.referenceMetadata}>Price level: {citation.price_level}</p>
                                         <p className={styles.referenceMetadata}>Rating: {citation.rating}</p>
                                         <p>{citation.description}</p>

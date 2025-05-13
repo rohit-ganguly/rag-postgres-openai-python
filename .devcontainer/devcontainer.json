@@ -31,8 +31,7 @@
 				"ms-python.vscode-pylance",
 				"ms-python.vscode-python-envs",
 				"charliermarsh.ruff",
-				"mtxr.sqltools",
-				"mtxr.sqltools-driver-pg",
+				// TODO: Add PostgreSQL extension once its in marketplace
 				"esbenp.prettier-vscode",
 				"mechatroner.rainbow-csv",
 				"ms-vscode.vscode-node-azure-pack",

@@ -119,6 +119,8 @@ class AdvancedRAGChat(RAGChatBase):
         most_recent_response = run_results.new_items[-1]
         if isinstance(most_recent_response, ToolCallOutputItem):
             search_results = most_recent_response.output
+            if not isinstance(search_results, SearchResults):
+                raise ValueError(f"Error retrieving search results: {search_results}")
         else:
             raise ValueError("Error retrieving search results, model did not call tool properly")
 
