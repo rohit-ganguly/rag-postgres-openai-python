@@ -15,7 +15,7 @@ class Item(Base):
     id: Mapped[str] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column()
     cuisine: Mapped[str] = mapped_column()
-    rating: Mapped[int] = mapped_column()
+    rating: Mapped[float] = mapped_column()
     price_level: Mapped[int] = mapped_column()
     review_count: Mapped[int] = mapped_column()
     description: Mapped[str] = mapped_column()
