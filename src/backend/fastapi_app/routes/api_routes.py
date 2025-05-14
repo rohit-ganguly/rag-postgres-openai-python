@@ -45,7 +45,7 @@ async def format_as_ndjson(r: AsyncGenerator[RetrievalResponseDelta, None]) -> A
 
 
 @router.get("/items/{id}", response_model=ItemPublic)
-async def item_handler(database_session: DBSession, id: int) -> ItemPublic:
+async def item_handler(database_session: DBSession, id: str) -> ItemPublic:
     """A simple API to get an item by ID."""
     item = (await database_session.scalars(select(Item).where(Item.id == id))).first()
     if not item:
@@ -55,7 +55,7 @@ async def item_handler(database_session: DBSession, id: int) -> ItemPublic:
 
 @router.get("/similar", response_model=list[ItemWithDistance])
 async def similar_handler(
-    context: CommonDeps, database_session: DBSession, id: int, n: int = 5
+    context: CommonDeps, database_session: DBSession, id: str, n: int = 5
 ) -> list[ItemWithDistance]:
     """A similarity API to find items similar to items with given ID."""
     item = (await database_session.scalars(select(Item).where(Item.id == id))).first()

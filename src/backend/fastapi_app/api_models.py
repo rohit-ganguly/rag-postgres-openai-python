@@ -45,7 +45,7 @@ class ItemPublic(BaseModel):
     id: str
     name: str
     cuisine: str
-    rating: int
+    rating: float
     price_level: int
     review_count: int
     description: str

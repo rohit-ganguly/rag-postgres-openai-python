@@ -16,9 +16,10 @@ async def test_item_handler(test_client):
     assert response_data["id"] == test_data.id
     assert response_data["name"] == test_data.name
     assert response_data["description"] == test_data.description
-    assert response_data["price"] == test_data.price
-    assert response_data["type"] == test_data.type
-    assert response_data["brand"] == test_data.brand
+    assert response_data["price_level"] == test_data.price_level
+    assert response_data["rating"] == test_data.rating
+    assert response_data["description"] == test_data.description
+    assert response_data["menu_summary"] == test_data.menu_summary
 
 
 @pytest.mark.asyncio
@@ -36,22 +37,21 @@ async def test_item_handler_404(test_client):
 @pytest.mark.asyncio
 async def test_similar_handler(test_client):
     """test the similar_handler route"""
-    response = test_client.get("/similar?id=1&n=1")
+    response = test_client.get("/similar?id=XDqSIoVRrG4JoF79HTT1Zw&n=1")
 
     assert response.status_code == 200
     assert response.headers["Content-Type"] == "application/json"
     assert response.json() == [
         {
-            "id": 71,
-            "name": "Explorer Frost Boots",
-            "price": 149.99,
-            "distance": 0.3,
-            "type": "Footwear",
-            "brand": "Daybird",
-            "description": "The Explorer Frost Boots by Daybird are the perfect companion for "
-            "cold-weather adventures. These premium boots are designed with a waterproof and insulated "
-            "shell, keeping your feet warm and protected in icy conditions. The sleek black design "
-            "with blue accents adds a touch of style to your outdoor gear.",
+            "id": "u4sTiCzVeIHZY8OlaL346Q",
+            "name": "Gaucho Parrilla Argentina",
+            "cuisine": "Argentine",
+            "rating": 4.5,
+            "price_level": 2,
+            "review_count": 2643,
+            "description": "",
+            "menu_summary": "",
+            "distance": 0.33,
         }
     ]
 
@@ -90,9 +90,10 @@ async def test_search_handler(test_client):
     assert response_data["id"] == test_data.id
     assert response_data["name"] == test_data.name
     assert response_data["description"] == test_data.description
-    assert response_data["price"] == test_data.price
-    assert response_data["type"] == test_data.type
-    assert response_data["brand"] == test_data.brand
+    assert response_data["price_level"] == test_data.price_level
+    assert response_data["rating"] == test_data.rating
+    assert response_data["description"] == test_data.description
+    assert response_data["menu_summary"] == test_data.menu_summary
 
 
 @pytest.mark.asyncio

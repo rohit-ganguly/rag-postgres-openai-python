@@ -1,6 +1,7 @@
 import ast
 import csv
 import json
+from typing import Any
 
 # Read CSV file - Using the correct dialect to handle quotes properly
 with open("pittsburgh_restaurants.csv", encoding="utf-8") as csv_file:
@@ -15,7 +16,7 @@ for row in data:
     item = {}
     for i in range(len(header)):
         if i < len(row):  # Ensure we don't go out of bounds
-            value = row[i].strip()
+            value: Any = row[i].strip()
             # Check if the value looks like a JSON array
             if value.startswith("[") and value.endswith("]"):
                 try:
