@@ -56,18 +56,17 @@ def source_retriever() -> Generator[str, None, None]:
     DATABASE_URI = f"postgresql://{DBUSER}:{DBPASS}@{DBHOST}/{DBNAME}"
     engine = create_engine(DATABASE_URI, echo=False)
     with Session(engine) as session:
-        # Fetch all products for a particular type
-        item_types = session.scalars(select(Item.type).distinct())
-        for item_type in item_types:
-            records = list(session.scalars(select(Item).filter(Item.type == item_type).order_by(Item.id)))
-            logger.info(f"Processing database records for type: {item_type}")
-            yield "\n\n".join([f"## Product ID: [{record.id}]\n" + record.to_str_for_rag() for record in records])
+        # Fetch all products for a particular type - depends on the database columns
+        # item_types = session.scalars(select(Item.type).distinct())
+        # for item_type in item_types:
+        #    records = list(session.scalars(select(Item).filter(Item.type == item_type).order_by(Item.id)))
+        #    logger.info(f"Processing database records for type: {item_type}")
+        #    yield "\n\n".join([f"## Product ID: [{record.id}]\n" + record.to_str_for_rag() for record in records])
         # Fetch each item individually
-        # records = list(session.scalars(select(Item).order_by(Item.id)))
-        # for record in records:
-        #    logger.info(f"Processing database record: {record.name}")
-        #    yield f"## Product ID: [{record.id}]\n" + record.to_str_for_rag()
-        # await self.openai_chat_client.chat.completions.create(
+        records = list(session.scalars(select(Item).order_by(Item.id)))
+        for record in records:
+            logger.info(f"Processing database record: {record.name}")
+            yield f"## Product ID: [{record.id}]\n" + record.to_str_for_rag()
 
 
 def source_to_text(source) -> str:
