@@ -1,27 +1,28 @@
 # RAG on PostgreSQL (PyCon US 2025 Demo!)
 
 > This repository is used in the Microsoft sponsor session at PyCon US 2025 by Rohit Ganguly and Pamela Fox.
-> If you're interested in seeing the original repository for this, visit Pamela's original one that this is forked from [here](https://github.com/Azure-Samples/rag-postgres-openai-python)!
+> This project is a Pittsburgh-specific fork of [the original RAG-on-PostgreSQL project](https://github.com/Azure-Samples/rag-postgres-openai-python).
 
 ## Resource links used in the presentation:
 
 ### VS Code Extensions
+
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
 - [GitHub Copilot for Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azure-github-copilot)
 - [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-- [The (new!) PostgreSQL Extension (link coming soon!)](#)
+- [PostgreSQL Extension (Brand new!)]([#](https://marketplace.visualstudio.com/items?itemName=ms-ossdata.vscode-pgsql))
 - [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+- [Azure AI Foundry](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.vscode-ai-foundry)
 
 ### Azure Services & Tools
+
 - [Azure Developer CLI](https://aka.ms/azd)
 - [Azure Container Apps](https://aka.ms/acadocs)
 - [Azure Database for PostgreSQL](https://aka.ms/postgresdocs)
 - [Azure AI Foundry](https://aka.ms/aifoundrydocs)
 
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure-Samples/rag-postgres-openai-python)
-[![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/azure-samples/rag-postgres-openai-python)
+## Project documentation
 
 This project creates a web-based chat application with an API backend that can use OpenAI chat models to answer questions about the rows in a PostgreSQL database table. The frontend is built with React and FluentUI, while the backend is written with Python and FastAPI.
 
