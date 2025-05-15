@@ -149,3 +149,4 @@ static/
 
 # Playwright test trace
 test-results/
+.DS_Store
