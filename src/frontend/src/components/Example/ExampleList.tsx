@@ -4,8 +4,8 @@ import styles from "./Example.module.css";
 
 const DEFAULT_EXAMPLES: string[] = [
     "Good spot to grab a quick coffee in morning?",
-    "Inexpensive chinese restaurants for 8-people?",
-    "4-star Japanese restaurant for a couple people?",
+    "Inexpensive Chinese restaurants for 8 people?",
+    "Can you recommend a highly rated Japanese restaurant?",
 ];
 
 interface Props {

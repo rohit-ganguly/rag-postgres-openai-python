@@ -37,7 +37,7 @@ async def test_item_handler_404(test_client):
 @pytest.mark.asyncio
 async def test_similar_handler(test_client):
     """test the similar_handler route"""
-    response = test_client.get("/similar?id=XDqSIoVRrG4JoF79HTT1Zw&n=1")
+    response = test_client.get("/similar?id=testid1&n=1")
 
     assert response.status_code == 200
     assert response.headers["Content-Type"] == "application/json"

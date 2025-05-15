@@ -17,7 +17,11 @@ class ChatUser(HttpUser):
                 "messages": [
                     {
                         "content": random.choice(
-                            ["Best shoe for hiking?", "Climbing shoe cheaper than $30?", "Waterproof camping gear?"]
+                            [
+                                "Good spot to grab a quick coffee in morning?",
+                                "Inexpensive Chinese restaurants for 8 people?",
+                                "Can you recommend a highly rated Japanese restaurant?",
+                            ]
                         ),
                         "role": "user",
                     }
@@ -32,7 +36,7 @@ class ChatUser(HttpUser):
             "/chat",
             json={
                 "messages": [
-                    {"content": "Best shoe for hiking?", "role": "user"},
+                    {"content": "Good spot to grab a quick coffee in morning?", "role": "user"},
                     {
                         "content": "For the best shoe for hiking, I recommend the Trailblaze Steel-Blue Hiking Shoes.",
                         "role": "assistant",

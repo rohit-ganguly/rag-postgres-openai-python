@@ -6,7 +6,7 @@ class TestData(ItemPublic):
 
 
 test_data = TestData(
-    id="XDqSIoVRrG4JoF79HTT1Zw",
+    id="testid1",
     name="Balvanera",
     cuisine="Argentine, Wine Bars, Steakhouses",
     rating=4.5,
