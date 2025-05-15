@@ -11,7 +11,7 @@
 - [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
 - [GitHub Copilot for Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azure-github-copilot)
 - [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-- [PostgreSQL Extension (Brand new!)]([#](https://marketplace.visualstudio.com/items?itemName=ms-ossdata.vscode-pgsql))
+- [PostgreSQL Extension (Brand new!)](https://marketplace.visualstudio.com/items?itemName=ms-ossdata.vscode-pgsql)
 - [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 - [Azure AI Foundry](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.vscode-ai-foundry)
 
